@@ -1,0 +1,18 @@
+<div class="home-section-1">
+        <div class="brands">
+          <ul>
+             @for (brand of allBrands(); track $index) {
+                <li style="text-transform: capitalize;" class="brand">{{ brand }}</li>
+            }
+          </ul>
+        </div>
+        <div class="commerical-banner">
+            <img [src]="welcomeSectionImages[showingImageIndex()]" alt="Welcome Banner 1" class="banner-image"/>
+            <article>
+                <span>Best Prices</span>
+                <h2 class="welcome-h2">Incredible Prices on All Your Favorite Items</h2>
+                <p>Get more for less on selected brands</p>
+                <button routerLink="orderPage">Shop Now <i class="fa-solid fa-basket-shopping"></i></button>
+            </article>
+        </div>
+    </div>

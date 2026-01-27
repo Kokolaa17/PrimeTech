@@ -1,0 +1,35 @@
+<div class="small-commerical">
+    <div class="commerical-container">
+        FREE SHIPPING WORLDWIDE
+    </div>
+</div>
+<nav class="main-nav">
+    <div class="nav-container">
+        <div class="logo-text">
+            <img src="/images/primetechlogo.png" alt="PrimeTech Logo">
+            <h1>PrimeTech</h1>
+        </div>
+        <div class="search">
+            <div class="input-container">
+                <input type="text" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+        </div>
+        <ul>
+            <li><i class="fa-solid fa-cart-arrow-down"></i> Cart</li>
+            <li><i class="fa-solid fa-circle-user"></i> Log In</li>
+            <li (click)="toggleSideMenu()" style="background-color: #EC5E2A; color: #fff;">
+                @if (isSideMenuOpen()) {
+                    <i class="fa-solid fa-x"></i>
+                }
+                @else {
+                    <i class="fa-solid fa-bars"></i>
+                }
+            </li>
+        </ul>
+    </div>
+</nav>
+@if (isSideMenuOpen()) {
+    <app-side-menu></app-side-menu>
+}
+
