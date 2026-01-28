@@ -10,14 +10,14 @@ import { APIConnection } from '../../../Services/apiconnection';
   styleUrl: './home-section-one.scss',
 })
 export class HomeSectionOne {
-  private readonly _ApiConnection = inject(APIConnection);
+  private readonly _http = inject(APIConnection);
 
   constructor() {
     this.changeShowingImage()
   }
 
   allBrands = toSignal(
-    this._ApiConnection.getBrands() as Observable<string[]>,
+    this._http.getBrands(),
     { initialValue: [] }
   );
 

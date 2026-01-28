@@ -1,3 +1,28 @@
 <div class="home-section-2">
-    <h2>Quick Deals</h2>
+    <h2>Flash Deals</h2>
+    <!-- Slider main container -->
+    <swiper-container slides-per-view="7" speed="500" loop="true" css-mode="true" centered-slides="true" space-between="40"
+        autoplay= "true" navigation="true" 
+        autoplay-pause-on-mouse-enter="true">
+        @for (deal of flashDeals(); track $index) {
+            <swiper-slide>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img [src]="deal.thumbnail" alt="${deal.title} thumbnail">
+                        @if (deal.price.discountPercentage > 0) {
+                            <p>{{deal.price.discountPercentage}}% Discount</p>
+                        }
+                    </div>    
+                    <article>
+                        <p>{{deal.price.current}}$ <span>{{deal.price.beforeDiscount == deal.price.current ? `${deal.price.beforeDiscount}$` : ''}}</span></p>
+                        <h2>{{deal.title}}</h2>
+                        <div class="action-buttons">
+                            <button class="details-button"><i class="fa-solid fa-eye"></i></button>
+                            <button class="add-to-cart-button"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
+                        </div>
+                    </article>
+                </div>
+            </swiper-slide>
+        }
+    </swiper-container>
 </div>
